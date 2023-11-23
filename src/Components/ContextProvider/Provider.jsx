@@ -50,7 +50,7 @@ const Provider = ({ children }) => {
       if (currentUser) {
         // setLoading(true);
         axios
-          .post("http://localhost:5000/jwt", loggedEmail, {
+          .post("https://hotel-server-nu.vercel.app/jwt", loggedEmail, {
             withCredentials: true,
           })
           .then((res) => console.log(res.data));
@@ -58,7 +58,7 @@ const Provider = ({ children }) => {
       } else {
         // setLoading(true);
         axios
-          .post("http://localhost:5000/logout", loggedEmail, {
+          .post("https://hotel-server-nu.vercel.app/logout", loggedEmail, {
             withCredentials: true,
           })
           .then((res) => console.log(res.data));

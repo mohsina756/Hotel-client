@@ -21,7 +21,7 @@ const BookedRoom = ({ Room, setBookedRooms, bookedRooms }) => {
       inputValue: Date,
     });
     const dateStore = { date };
-    fetch(`http://localhost:5000/booked/${Room._id}`, {
+    fetch(`https://hotel-server-nu.vercel.app/booked/${Room._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const BookedRoom = ({ Room, setBookedRooms, bookedRooms }) => {
         const comment = document.getElementById("comment").value;
         const review = { num: Room.num, rating, comment, userName };
         axios
-          .post("http://localhost:5000/review", review, {
+          .post("https://hotel-server-nu.vercel.app/review", review, {
             withCredentials: true,
           })
           .then((res) => {
@@ -97,7 +97,7 @@ const BookedRoom = ({ Room, setBookedRooms, bookedRooms }) => {
         cancelButtonText: "No!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/booked/${num}`, {
+          fetch(`https://hotel-server-nu.vercel.app/booked/${num}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

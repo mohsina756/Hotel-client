@@ -52,7 +52,7 @@ const Details = () => {
 
         axios
           .put(
-            `http://localhost:5000/room/seat/${Room._id}`,
+            `https://hotel-server-nu.vercel.app/room/seat/${Room._id}`,
             seats,
             {
               withCredentials: true,
@@ -77,7 +77,7 @@ const Details = () => {
   useEffect(() => {
     Aos.refresh();
     axios
-      .get(`http://localhost:5000/review/${Room.num}`)
+      .get(`https://hotel-server-nu.vercel.app/review/${Room.num}`)
       .then((res) => setReviews(res.data))
       .catch((error) => {
         console.error("Error:", error);

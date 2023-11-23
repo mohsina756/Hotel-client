@@ -23,7 +23,7 @@ const Booked = () => {
   useEffect(() => {
     // Aos.refresh();
     axios
-      .get(`http://localhost:5000/booked/${user.email}`, {
+      .get(`https://hotel-server-nu.vercel.app/booked/${user.email}`, {
         withCredentials: true,
       })
       .then((res) => setBookedRooms(res.data));
